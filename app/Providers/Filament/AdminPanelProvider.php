@@ -36,10 +36,14 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
+
+            // bagian ini untuk mengambil index widget yang berada pada filament/widgets
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
+            
             ->widgets([
                 AccountWidget::class,
                 FilamentInfoWidget::class,
+                
             ])
             ->middleware([
                 EncryptCookies::class,
